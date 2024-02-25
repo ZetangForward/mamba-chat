@@ -6,7 +6,6 @@ from transformers import AutoTokenizer, TrainingArguments
 from trainer.data import ChatDataModule
 from trainer.mamba_trainer import MambaTrainer
 
-
 def run(args):
         
     model = MambaLMHeadModel.from_pretrained(args.model, dtype=torch.bfloat16, device="cuda")
@@ -15,7 +14,6 @@ def run(args):
     tokenizer.eos_token = "<|endoftext|>"
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.chat_template = AutoTokenizer.from_pretrained("HuggingFaceH4/zephyr-7b-beta").chat_template
-
 
     data_module = ChatDataModule(
         tokenizer=tokenizer,
