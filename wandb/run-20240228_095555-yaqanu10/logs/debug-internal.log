@@ -82,3 +82,14 @@ requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', por
 2024-02-28 09:57:19,855 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: shutdown
 2024-02-28 09:57:19,855 INFO    HandlerThread:1131753 [handler.py:finish():869] shutting down handler
 2024-02-28 09:57:19,867 INFO    WriterThread:1131753 [datastore.py:close():296] close: /nvme/zecheng/state-space-model/mamba-trainer/wandb/run-20240228_095555-yaqanu10/run-yaqanu10.wandb
+2024-02-28 10:31:34,897 INFO    SenderThread:1131753 [dir_watcher.py:__init__():211] watching files in: /nvme/zecheng/state-space-model/mamba-trainer/wandb/run-20240228_095555-yaqanu10/files
+2024-02-28 10:31:34,897 INFO    SenderThread:1131753 [sender.py:_start_run_threads():1136] run started: yaqanu10 with start time 1709085355.846296
+2024-02-28 10:31:34,897 INFO    SenderThread:1131753 [sender.py:finish():1572] shutting down sender
+2024-02-28 10:31:34,897 INFO    SenderThread:1131753 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-02-28 10:31:35,897 INFO    SenderThread:1131753 [dir_watcher.py:finish():388] scan: /nvme/zecheng/state-space-model/mamba-trainer/wandb/run-20240228_095555-yaqanu10/files
+2024-02-28 10:31:35,897 INFO    SenderThread:1131753 [dir_watcher.py:finish():402] scan save: /nvme/zecheng/state-space-model/mamba-trainer/wandb/run-20240228_095555-yaqanu10/files/config.yaml config.yaml
+2024-02-28 10:31:35,898 INFO    SenderThread:1131753 [file_pusher.py:finish():172] shutting down file pusher
+2024-02-28 10:31:35,898 INFO    SenderThread:1131753 [file_pusher.py:join():178] waiting for file pusher
+2024-02-28 10:31:36,984 INFO    wandb-upload_0:1131753 [upload_job.py:push():131] Uploaded file /nvme/zecheng/state-space-model/mamba-trainer/wandb/run-20240228_095555-yaqanu10/files/config.yaml
+2024-02-28 10:31:37,400 INFO    SenderThread:1131753 [file_stream.py:finish():595] file stream finish called
+2024-02-28 10:31:37,830 INFO    SenderThread:1131753 [file_stream.py:finish():599] file stream finish is done
