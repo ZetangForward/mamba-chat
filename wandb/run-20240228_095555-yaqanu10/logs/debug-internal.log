@@ -1,0 +1,84 @@
+2024-02-28 09:55:55,848 INFO    StreamThr :1131753 [internal.py:wandb_internal():86] W&B internal server running at pid: 1131753, started at: 2024-02-28 09:55:55.846960
+2024-02-28 09:55:55,849 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: status
+2024-02-28 09:55:55,851 INFO    WriterThread:1131753 [datastore.py:open_for_write():87] open: /nvme/zecheng/state-space-model/mamba-trainer/wandb/run-20240228_095555-yaqanu10/run-yaqanu10.wandb
+2024-02-28 09:55:55,854 DEBUG   SenderThread:1131753 [sender.py:send():382] send: header
+2024-02-28 09:55:55,854 DEBUG   SenderThread:1131753 [sender.py:send():382] send: run
+2024-02-28 09:56:00,855 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:05,856 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:10,857 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:15,859 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:20,860 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:25,861 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:30,863 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:35,864 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:40,865 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:45,866 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:50,868 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:56:55,869 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:57:00,870 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:57:02,878 INFO    SenderThread:1131753 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/connection.py", line 212, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fd2f20ed180>, 'Connection to api.wandb.ai timed out. (connect timeout=20)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd2f20ed180>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 369, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/amax/anaconda3/envs/zecheng/lib/python3.10/site-packages/requests/adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd2f20ed180>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+2024-02-28 09:57:05,871 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:57:10,872 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:57:15,873 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-28 09:57:19,855 DEBUG   HandlerThread:1131753 [handler.py:handle_request():146] handle_request: shutdown
+2024-02-28 09:57:19,855 INFO    HandlerThread:1131753 [handler.py:finish():869] shutting down handler
+2024-02-28 09:57:19,867 INFO    WriterThread:1131753 [datastore.py:close():296] close: /nvme/zecheng/state-space-model/mamba-trainer/wandb/run-20240228_095555-yaqanu10/run-yaqanu10.wandb
