@@ -6,6 +6,7 @@ import os
 class MambaTrainer(Trainer):
     def compute_loss(self, model, inputs, return_outputs=False):
         input_ids = inputs.pop("input_ids")
+        import pdb; pdb.set_trace()
         lm_logits = model(input_ids).logits
 
         labels = input_ids.to(lm_logits.device)

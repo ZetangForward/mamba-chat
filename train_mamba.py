@@ -24,7 +24,6 @@ def run(args):
     train_dataset = TextFillingDataset(content[1000:], tokenizer, "train", full_modeling=True, **kwargs)
     valid_dataset = TextFillingDataset(content[:1000], tokenizer, "valid", full_modeling=True, **kwargs)
 
-
     data_module = dict(
         train_dataset=train_dataset, 
         eval_dataset=valid_dataset, 
